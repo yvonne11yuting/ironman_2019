@@ -1,0 +1,17 @@
+{
+  "name": "react_parcel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.10.2"
+  },
+  "scripts": {
+    "start": "parcel index.html -p 8080",
+    "build": "NODE_ENV=production parcel build index.html"
+  }
+}

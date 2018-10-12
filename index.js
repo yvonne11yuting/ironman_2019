@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Counter from './src/components/counter';
+
 const App = () => {
   return (
     <div>
-      Hello World!
+      <Counter/>
     </div>
   );
 };

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "5bc2afa3669a0ca9d862dd21",
+    "name": "Dorothy Snider",
+    "greeting": "Hello, Dorothy Snider"
+  },
+  {
+    "id": "5bc2afa3ed46014887f024c7",
+    "name": "Joanne Kane",
+    "greeting": "Hello, Joanne Kane"
+  },
+  {
+    "id": "5bc2afa396bb83ab8d734a06",
+    "name": "Rosalind Kennedy",
+    "greeting": "Hello, Rosalind Kennedy"
+  },
+  {
+    "id": "5bc2afa3b144e8e520651898",
+    "name": "Wendi Koch",
+    "greeting": "Hello, Wendi Koch"
+  },
+  {
+    "id": "5bc2afa3b9bb90ae6e63bfba",
+    "name": "Glenna Warner",
+    "greeting": "Hello, Glenna Warner"
+  },
+  {
+    "id": "5bc2afa3f3f6e5bd7525d0e3",
+    "name": "Carol Hampton",
+    "greeting": "Hello, Carol Hampton"
+  }
+]

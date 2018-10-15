@@ -47,12 +47,12 @@ export default withFormik({
     password: yup.string().min(6, '密碼至少大於6').required('必填'),
     rule: yup.boolean().oneOf([true], '一定要同意！'),
   }),
-  // 通過驗證並點擊送出按鈕時
+  // 點擊送出時
   handleSubmit(values, { resetForm, setSubmitting }) {
     setTimeout(() => {
-      resetForm();
-      setSubmitting(false);
-      alert(JSON.stringify(values, null, 2));
+      resetForm();  //重設表單
+      setSubmitting(false); //狀態更新(true:傳送中, false:傳送完成)
+      alert(JSON.stringify(values, null, 2));  //alert values
     }, 1000)
   }
 })(Register)

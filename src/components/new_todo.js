@@ -18,15 +18,18 @@ class NewTodo extends PureComponent {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addNewTodo(this.state.todoVal);
-    this.setState({ todoVal: "" });
+    if(this.state.todoVal) {
+      this.props.addNewTodo(this.state.todoVal);
+      this.setState({ todoVal: "" });
+    }
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="form">
         <input
           type="text"
+          className="form-text"
           value={this.state.todoVal}
           onChange={this.handleChange}
         />

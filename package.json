@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer": "^9.2.1",
     "immutability-helper": "^2.8.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "sass": "^1.14.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
@@ -15,5 +17,16 @@
   "scripts": {
     "start": "parcel index.html -p 8080",
     "build": "NODE_ENV=production parcel build index.html"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 2 versions",
+          "not ie < 10"
+        ]
+      }
+    }
   }
 }

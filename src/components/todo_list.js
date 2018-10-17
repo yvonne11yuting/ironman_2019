@@ -2,14 +2,15 @@ import React from 'react';
 
 const TodoList = ({todo, completeTodo, removeTodo}) => (
   todo.map((item, index) => (
-    <li key={item.key}>
+    <li key={item.key} className="list-item">
       <input
         type="checkbox"
-        checked={item.completed}
+        id={item.key}
+        className="list-item-complete"
         onChange={() => completeTodo(index, { ...item, completed: !item.completed})}
       />
-      <span>{item.text}</span>
-      <button onClick={() => removeTodo(index)}>移除</button>
+      <label htmlFor={item.key}>{item.text}</label>
+      <button className="btn" onClick={() => removeTodo(index)}>移除</button>
     </li>
   ))
 )

@@ -6,7 +6,7 @@ import uuid from 'uuid/v4';
 
 import NewTodo from './src/components/new_todo';
 import TodoList from './src/components/todo_list';
-
+import './src/styles/index.scss';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -47,10 +47,11 @@ class App extends Component {
     const todoList = this.state.todoList;
     const hasTodoList = todoList.length > 0;
     return (
-      <div>
+      <div className="main">
+        <h1 className="title">todos</h1>
         <NewTodo addNewTodo={this.addNewTodo}/>
         { hasTodoList && (
-          <ul key="componentTodoList">
+          <ul className="list" key="componentTodoList">
             <TodoList
               todo={todoList}
               completeTodo={this.completeTodo}

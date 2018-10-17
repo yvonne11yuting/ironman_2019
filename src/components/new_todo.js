@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class NewTodo extends Component {
+class NewTodo extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

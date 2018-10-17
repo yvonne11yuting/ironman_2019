@@ -51,7 +51,7 @@ class App extends Component {
         <h1 className="title">todos</h1>
         <NewTodo addNewTodo={this.addNewTodo}/>
         { hasTodoList && (
-          <ul className="list" key="componentTodoList">
+          <ul className="list">
             <TodoList
               todo={todoList}
               completeTodo={this.completeTodo}

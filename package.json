@@ -8,10 +8,16 @@
     "immutability-helper": "^2.8.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.1",
     "sass": "^1.14.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "parcel-bundler": "^1.10.2"
   },
   "scripts": {

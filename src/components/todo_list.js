@@ -1,18 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { completeTodo, removeTodo } from '../actions/';
 
-const TodoList = ({todo, completeTodo, removeTodo}) => (
-  todo.map((item, index) => (
-    <li key={item.key} className="list-item">
-      <input
-        type="checkbox"
-        id={item.key}
-        className="list-item-complete"
-        onChange={() => completeTodo(index, { ...item, completed: !item.completed})}
+import TodoListItem from './todo_list_item';
+
+const TodoList = ({todo, completeTodo, removeTodo}) => {
+  return todo.length ? (
+    <ul className="list">
+      <TodoListItem
+        todo={todo}
+        completeTodo={completeTodo}
+        removeTodo={removeTodo}
       />
-      <label htmlFor={item.key}>{item.text}</label>
-      <button className="btn" onClick={() => removeTodo(index)}>移除</button>
-    </li>
-  ))
-)
+    </ul>
+  ): null
+};
 
-export default TodoList;
+const mapStateToProps = ({todoList}) => ({
+  todo: todoList
+})
+
+const mapDispatchToProps = {
+  completeTodo, removeTodo
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

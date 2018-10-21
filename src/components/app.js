@@ -12,20 +12,9 @@ class App extends Component {
     this.state = {
       todoList: []
     }
-    this.addNewTodo = this.addNewTodo.bind(this);
+
     this.completeTodo = this.completeTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
-  }
-
-  addNewTodo(text) {
-    const newItem = {
-      text,
-      key: uuid(),
-      completed: false
-    }
-    this.setState({
-      todoList: [...this.state.todoList, newItem]
-    })
   }
 
   completeTodo(index, item) {
@@ -48,7 +37,7 @@ class App extends Component {
     return (
       <div className="main">
         <h1 className="title">todos</h1>
-        <NewTodo addNewTodo={this.addNewTodo}/>
+        <NewTodo/>
         { hasTodoList && (
           <ul className="list">
             <TodoList

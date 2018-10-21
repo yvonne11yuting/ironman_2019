@@ -5,7 +5,7 @@ import { ADD_NEW_TODO, COMPLETE_TODO, REMOVE_TODO } from '../constants/action_ty
 export const addNewTodo = text => {
   return {
     type: ADD_NEW_TODO,
-    payload: {
+    newItem: {
       text,
       key: uuid(),
       completed: false

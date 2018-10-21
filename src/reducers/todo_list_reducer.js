@@ -1,12 +1,10 @@
 import { ADD_NEW_TODO, COMPLETE_TODO, REMOVE_TODO } from '../constants/action_type';
 import update from 'immutability-helper';
 
-const initialState = [];
-
-export default function(state = initialState, action) {
+export default function(state = [], action) {
   switch (action.type) {
     case ADD_NEW_TODO:
-      return [ ...state, action.payload ];
+      return [ ...state, action.newItem ];
     case COMPLETE_TODO:
       return update(state, {
         [action.index]: {$set: action.item}

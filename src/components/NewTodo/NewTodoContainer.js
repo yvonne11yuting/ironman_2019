@@ -1,8 +1,10 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import { addNewTodo } from "../actions";
+import { addNewTodo } from "../../actions";
 
-class NewTodo extends PureComponent {
+import NewTodo from "./NewTodo";
+
+class NewTodoContainer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,16 +30,13 @@ class NewTodo extends PureComponent {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="form">
-        <input
-          type="text"
-          className="form-text"
-          value={this.state.todoVal}
-          onChange={this.handleChange}
-        />
-      </form>
+      <NewTodo
+        todoVal={this.state.todoVal}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+      />
     );
   }
 }
 
-export default connect(null, { addNewTodo })(NewTodo);
+export default connect(null, { addNewTodo })(NewTodoContainer);

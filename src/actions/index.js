@@ -13,10 +13,10 @@ export const addNewTodo = text => {
   }
 }
 
-export const completeTodo = (index, item) => {
+export const completeTodo = (index) => {
   return {
     type: COMPLETE_TODO,
-    index, item
+    index
   }
 }
 

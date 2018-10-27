@@ -11,7 +11,8 @@ const TodoListItem = ({
         type="checkbox"
         id={item.key}
         className="list-item-complete"
-        onChange={() => completeTodo(index, { ...item, completed: !item.completed})}
+        checked={item.completed}
+        onChange={() => completeTodo(index)}
       />
       <label htmlFor={item.key}>{item.text}</label>
       <button className="btn" onClick={() => removeTodo(index)}>移除</button>

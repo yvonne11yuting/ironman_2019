@@ -6,8 +6,9 @@ export default function(state = [], action) {
     case ADD_NEW_TODO:
       return [ ...state, action.newItem ];
     case COMPLETE_TODO:
+      let todoItem = state[action.index];
       return update(state, {
-        [action.index]: {$set: action.item}
+        [action.index]: {$set: { ...todoItem, completed: !todoItem.completed }}
       });
     case REMOVE_TODO:
       return update(state, {

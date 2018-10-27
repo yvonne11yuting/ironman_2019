@@ -4,12 +4,12 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./src/store";
 
-import App from "./src/components/App";
+import RootRouter from "./router";
 import "./src/styles/index.scss";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <RootRouter />
   </Provider>,
   document.getElementById("app")
 );

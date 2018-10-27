@@ -3,14 +3,14 @@ import React from 'react';
 import NewTodoContainer from './NewTodo/NewTodoContainer';
 import TodoListContainer from './TodoList/TodoListContainer';
 
-const App = () => {
+const Todos = () => {
   return (
-    <div className="main">
+    <main className="main">
       <h1 className="title">todos</h1>
       <NewTodoContainer/>
       <TodoListContainer/>
-    </div>
+    </main>
   );
 }
 
-export default App;
+export default Todos;

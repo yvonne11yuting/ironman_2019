@@ -1,10 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const TodoListItem = ({
-  todo,
-  completeTodo,
-  removeTodo
-}) => (
+const TodoListItem = ({ todo, completeTodo, removeTodo }) =>
   todo.map((item, index) => (
     <li key={item.key} className="list-item">
       <input
@@ -15,12 +11,13 @@ const TodoListItem = ({
         onChange={() => completeTodo(index)}
       />
       <label htmlFor={item.key}>{item.text}</label>
-      <button className="btn" onClick={() => removeTodo(index)}>移除</button>
+      <button className="btn" onClick={() => removeTodo(index)}>
+        移除
+      </button>
     </li>
-  ))
-)
+  ));
 
-const TodoList = ({todo, completeTodo, removeTodo}) => (
+const TodoList = ({ todo, completeTodo, removeTodo }) => (
   <ul className="list">
     <TodoListItem
       todo={todo}

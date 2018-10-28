@@ -1,7 +1,8 @@
 import React from 'react';
 
-import NewTodoContainer from './NewTodo/NewTodoContainer';
-import TodoListContainer from './TodoList/TodoListContainer';
+import NewTodoContainer from './NewTodoContainer';
+import TodoListContainer from './TodoListContainer';
+import TodoFilterConatiner from './TodoFilterConatiner';
 
 const Todos = () => {
   return (
@@ -9,6 +10,7 @@ const Todos = () => {
       <h1 className="title">todos</h1>
       <NewTodoContainer/>
       <TodoListContainer/>
+      <TodoFilterConatiner/>
     </main>
   );
 }

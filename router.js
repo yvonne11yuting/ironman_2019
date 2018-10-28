@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Layout from "./src/components/Layout";
 import Home from "./src/components/Home";
-import Todos from "./src/components/Todos";
+import Todos from "./src/components/Todos/Todos";
 import News from "./src/components/News";
 import NoMatch from "./src/components/NoMatch";
 

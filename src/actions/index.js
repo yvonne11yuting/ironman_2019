@@ -13,16 +13,16 @@ export const addNewTodo = text => {
   }
 }
 
-export const completeTodo = (index) => {
+export const completeTodo = (key) => {
   return {
     type: COMPLETE_TODO,
-    index
+    key
   }
 }
 
-export const removeTodo = (index) => {
+export const removeTodo = (key) => {
   return {
     type: REMOVE_TODO,
-    index
+    key
   };
 }

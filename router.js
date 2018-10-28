@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import Layout from "./src/components/Layout";
 import Home from "./src/components/Home";
@@ -13,8 +13,9 @@ const RootRouter = () => {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/todos" component={Todos} />
+          <Route exact path="/todos" component={Todos} />
           <Route path="/news" component={News} />
+          <Redirect from="/todos/:id" to="/todos"/>
           <Route component={NoMatch} />
         </Switch>
       </Layout>

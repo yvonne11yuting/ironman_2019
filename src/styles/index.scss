@@ -85,7 +85,6 @@ body {
 
 .list {
   margin: 20px 0;
-  line-height: 2;
   font-size: 20px;
   width: inherit;
 }
@@ -93,6 +92,10 @@ body {
 .list-item {
   display: flex;
   align-items: center;
+  word-break: break-all;
+  &+.list-item {
+    margin-top: 10px;
+  }
 }
 
 .list-item-complete {
@@ -116,4 +119,28 @@ body {
   font-size: 13px;
   color: #fff;
   background: $mainColor;
+  white-space: nowrap;
 }
+
+.state {
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+  margin: 20px 0;
+}
+
+.state-filter-list {
+  display: flex;
+}
+
+.state-filter-item {
+  text-decoration: none;
+  color: #555;
+  padding: 5px 15px;
+  margin: 0 5px;
+  border-radius: 3px;
+  &:hover {
+    background: #ffffffb0;
+  }
+}
+

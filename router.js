@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import Layout from "./src/components/Layout";
 import Home from "./src/components/Home";
 import Todos from "./src/components/Todos/Todos";
-import News from "./src/components/News";
+import News from "./src/components/News/News";
 import NoMatch from "./src/components/NoMatch";
 
 const RootRouter = () => {

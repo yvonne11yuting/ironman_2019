@@ -6,9 +6,8 @@ import { completeTodo, removeTodo } from '../../actions';
 
 import TodoList from './TodoList';
 
-const TodoListContainer = ({todo, completeTodo, removeTodo, ...props}) => {
-  let hasTodo = todo.length;
-  return hasTodo ? (
+const TodoListContainer = ({todo, completeTodo, removeTodo}) => {
+  return todo.length ? (
     <TodoList
       todo={todo}
       completeTodo={completeTodo}
@@ -20,7 +19,7 @@ const TodoListContainer = ({todo, completeTodo, removeTodo, ...props}) => {
 const mapStateToProps = ({todoList}, {location:{search}}) => {
   let params = new URLSearchParams(search.substring(1));
   let state = params.get('state');
-  let completed = state === "completed" ? true : false;
+  let completed = state === "completed";
   let todo = state ? todoList.filter(item => item.completed === completed) : todoList;
   return { todo };
 }

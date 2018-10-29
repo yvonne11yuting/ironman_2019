@@ -22,6 +22,6 @@ const TodoFilterConatiner = ({todoLength, activeLength}) => todoLength ? (
 ) : null;
 
 export default connect(({todoList}) => ({
-  todoLength: todoList.length || null,
+  todoLength: todoList.length,
   activeLength: todoList.filter(({completed}) => !completed).length
 }))(TodoFilterConatiner);

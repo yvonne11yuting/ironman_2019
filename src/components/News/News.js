@@ -4,12 +4,15 @@ import NewsSelect from "./NewsSelect";
 import NewsList from "./NewsList";
 import { fetchNews } from "../../actions";
 
-const News = ({ err, articles, fetchNews, country, isLoading }) => {
-  let newsList = err ? (<div>{err}</div>) : <NewsList articles={articles} isLoading={isLoading} />
+const News = ({ err, articles, fetchNews, country, isLoading, match }) => {
   return (
     <main className="main">
-      <NewsSelect fetchNews={fetchNews} country={country}/>
-      { newsList }
+      <NewsSelect fetchNews={fetchNews} country={country} />
+      {err ? (
+        <div>{err}</div>
+      ) : (
+        <NewsList articles={articles} isLoading={isLoading} pageUrl={match.url}/>
+      )}
     </main>
   );
 };

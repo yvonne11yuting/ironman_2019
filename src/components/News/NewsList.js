@@ -1,12 +1,12 @@
-import React from 'react';
-import withLoading from '../hoc/with_loading';
+import React from "react";
+import withLoading from "../hoc/with_loading";
 
-const NewsList = ({articles}) => {
+import NewsListItem from "./NewsListItem";
+
+const NewsList = ({ articles, pageUrl }) => {
   return articles.length ? (
     <ul>
-      {articles.map((news, index) => (
-        <div key={index}>{news.title}</div>
-      ))}
+      <NewsListItem articles={articles} pageUrl={pageUrl} />
     </ul>
   ) : null;
 };

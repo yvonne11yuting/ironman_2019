@@ -144,3 +144,20 @@ body {
   }
 }
 
+.news-selection {
+  margin: 20px 0;
+}
+
+.news-item {
+  &+.news-item {
+    margin-top: 10px;
+  }
+}
+
+.news-item-anchor {
+  text-decoration: none;
+  color: #333;
+  &:hover {
+    color: #0048a7;
+  }
+}

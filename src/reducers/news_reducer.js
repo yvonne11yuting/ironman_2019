@@ -1,4 +1,4 @@
-import { FETCH_NEWS_SUCCESS, FETCH_NEWS_ERROR } from "../constants/action_type";
+import { FETCH_NEWS_SUCCESS, FETCH_NEWS_ERROR, FETCH_NEWS_REQUEST } from "../constants/action_type";
 
 export default function(state = {
   articles: [],
@@ -7,9 +7,11 @@ export default function(state = {
   switch (action.type) {
     case FETCH_NEWS_SUCCESS:
       let { data:{articles}, status } = action.res;
-      return status === 200 ? { articles, country: action.country } : state;
+      return status === 200 ? { articles, country: action.country , isLoading: false} : state;
     case FETCH_NEWS_ERROR:
-      return { err: 'Something Wrong...' }
+      return { err: 'Something Wrong...', isLoading: false }
+    case FETCH_NEWS_REQUEST:
+      return { ...state, isLoading: true }
     default:
       return state;
   }

@@ -4,17 +4,20 @@ import NewsSelect from "./NewsSelect";
 import NewsList from "./NewsList";
 import { fetchNews } from "../../actions";
 
-const News = ({ articles, fetchNews, country }) => {
+const News = ({ err, articles, fetchNews, country, isLoading }) => {
+  let newsList = err ? (<div>{err}</div>) : <NewsList articles={articles} isLoading={isLoading} />
   return (
     <main className="main">
       <NewsSelect fetchNews={fetchNews} country={country}/>
-      <NewsList articles={articles} />
+      { newsList }
     </main>
   );
 };
 
 export default connect(
-  ({ news: { err, articles, country } }) => ({
+  ({ news: { err, articles, country, isLoading } }) => ({
+    err,
+    isLoading,
     articles,
     country
   }),

@@ -1,13 +1,14 @@
 import React from 'react';
+import withLoading from '../hoc/with_loading';
 
 const NewsList = ({articles}) => {
-  return (
+  return articles.length ? (
     <ul>
       {articles.map((news, index) => (
         <div key={index}>{news.title}</div>
       ))}
     </ul>
-  );
+  ) : null;
 };
 
-export default NewsList;
+export default withLoading(NewsList);

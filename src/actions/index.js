@@ -6,7 +6,8 @@ import {
   COMPLETE_TODO,
   REMOVE_TODO,
   FETCH_NEWS_SUCCESS,
-  FETCH_NEWS_ERROR
+  FETCH_NEWS_ERROR,
+  FETCH_NEWS_REQUEST
 } from "../constants/action_type";
 
 export const addNewTodo = text => {
@@ -34,6 +35,10 @@ export const removeTodo = key => {
   };
 };
 
+const fetchNewsRequest = () => ({
+  type: FETCH_NEWS_REQUEST
+})
+
 const fetchNewsSuccess = (res, country) => ({
   type: FETCH_NEWS_SUCCESS,
   res, country
@@ -46,9 +51,12 @@ const fetchNewsError = err => ({
 
 export const fetchNews = country => {
   const URL = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=bb126a5312f5417c852cd93ce738a8f2`;
-  return dispatch =>
+  return dispatch => {
+    dispatch(fetchNewsRequest());
     axios
       .get(URL)
       .then(res => dispatch(fetchNewsSuccess(res, country)))
       .catch(err => dispatch(fetchNewsError(err)));
+  }
+
 };

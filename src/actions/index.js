@@ -35,28 +35,13 @@ export const removeTodo = key => {
   };
 };
 
-const fetchNewsRequest = () => ({
-  type: FETCH_NEWS_REQUEST
-})
-
-const fetchNewsSuccess = (res, country) => ({
-  type: FETCH_NEWS_SUCCESS,
-  res, country
-});
-
-const fetchNewsError = err => ({
-  type: FETCH_NEWS_ERROR,
-  err
-});
-
 export const fetchNews = country => {
   const URL = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=bb126a5312f5417c852cd93ce738a8f2`;
   return dispatch => {
-    dispatch(fetchNewsRequest());
+    dispatch({ type: FETCH_NEWS_REQUEST, country });
     axios
       .get(URL)
-      .then(res => dispatch(fetchNewsSuccess(res, country)))
-      .catch(err => dispatch(fetchNewsError(err)));
+      .then(res => dispatch({ type: FETCH_NEWS_SUCCESS, res }))
+      .catch(err => dispatch({ type: FETCH_NEWS_ERROR, err }));
   }
-
 };

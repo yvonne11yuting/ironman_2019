@@ -7,7 +7,7 @@ export default function(state = {
   switch (action.type) {
     case FETCH_NEWS_SUCCESS:
       let { data:{articles}, status } = action.res;
-      return status === 200 ? { articles, isLoading: false} : state;
+      return status === 200 ? { ...state, articles, isLoading: false} : state;
     case FETCH_NEWS_ERROR:
       return { err: 'Something Wrong...', isLoading: false }
     case FETCH_NEWS_REQUEST:

@@ -1,34 +1,33 @@
-import React from 'react';
-import { connect } from 'react-redux';
-
+import React from "react";
+import { connect } from "react-redux";
+import NewsDetailContent from "./NewsDetailContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
-const NewsDetail = ({newsDetail}) => {
-  const { content, title, url, urlToImage } = newsDetail;
+const BackButton = ({ goBack }) => (
+  <span className="back-btn" onClick={goBack}>
+    <FontAwesomeIcon
+      icon={faArrowCircleLeft}
+      color="rgba(0,0,0,.3)"
+      size="4x"
+    />
+  </span>
+);
+
+const NewsDetail = ({ newsDetail, history }) => {
   return (
     <main className="main news-detail">
-      <figure>
-        <img src={urlToImage} alt={title} style={{maxWidth: '60vw'}}/>
-        <figcaption>
-          <h1 className="news-detail-title">
-            <a href={url} className="news-detail-title-anchor">
-              <b>{title}</b>
-              <FontAwesomeIcon icon={faExternalLinkAlt} color="#999" size="xs"/>
-            </a>
-          </h1>
-          <p>{content}</p>
-        </figcaption>
-      </figure>
+      <BackButton goBack={history.goBack} />
+      <NewsDetailContent newsDetail={newsDetail} />
     </main>
   );
 };
 
-const mapStateToProps = ({news:{articles}}, ownProps) => {
-  const { index } = ownProps.match.params
+const mapStateToProps = ({ news: { articles } }, ownProps) => {
+  const { index } = ownProps.match.params;
   return {
     newsDetail: articles[index]
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(NewsDetail);

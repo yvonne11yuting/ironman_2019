@@ -5,7 +5,7 @@ import NewsListItem from "./NewsListItem";
 
 const NewsList = ({ articles, pageUrl }) => {
   return articles.length ? (
-    <ul>
+    <ul className="news-item-container">
       <NewsListItem articles={articles} pageUrl={pageUrl} />
     </ul>
   ) : null;

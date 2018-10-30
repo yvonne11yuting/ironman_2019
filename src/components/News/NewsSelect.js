@@ -6,12 +6,13 @@ const NewsSelect = ({ country, fetchNews }) => {
       <form className="vertical-center">
         <label htmlFor="newsCountry" className="news-selection-label">Top Headlines</label>
         <select
+          className="news-selection-select"
           name="country"
           id="newsCountry"
           onChange={e => fetchNews(e.target.value)}
           value={country}
         >
-          <option value="" disabled>---</option>
+          <option value="" disabled>---請選擇---</option>
           <option value="tw">Taiwan</option>
           <option value="jp">Japan</option>
           <option value="us">USA</option>

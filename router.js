@@ -5,6 +5,7 @@ import Layout from "./src/components/Layout";
 import Home from "./src/components/Home";
 import Todos from "./src/components/Todos/Todos";
 import News from "./src/components/News/News";
+import NewsDetail from "./src/components/News/NewsDetail";
 import NoMatch from "./src/components/NoMatch";
 
 const RootRouter = () => {
@@ -14,7 +15,8 @@ const RootRouter = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/todos" component={Todos} />
-          <Route path="/news" component={News} />
+          <Route exact path="/news" component={News} />
+          <Route path="/news/:index" component={NewsDetail} />
           <Redirect from="/todos/:id" to="/todos"/>
           <Route component={NoMatch} />
         </Switch>

@@ -4,7 +4,7 @@ import NewsSelect from "./NewsSelect";
 import NewsList from "./NewsList";
 import { fetchNews } from "../../actions";
 
-const News = ({ err, articles, fetchNews, country, isLoading, match }) => {
+const News = ({ err, articles, fetchNews, country, isLoading, location }) => {
   return (
     <main className="main">
       <NewsSelect fetchNews={fetchNews} country={country} />
@@ -14,7 +14,7 @@ const News = ({ err, articles, fetchNews, country, isLoading, match }) => {
         <NewsList
           articles={articles}
           isLoading={isLoading}
-          pageUrl={match.url}
+          pathname={location.pathname}
         />
       )}
     </main>

@@ -11,7 +11,11 @@ const News = ({ err, articles, fetchNews, country, isLoading, match }) => {
       {err ? (
         <div>{err}</div>
       ) : (
-        <NewsList articles={articles} isLoading={isLoading} pageUrl={match.url}/>
+        <NewsList
+          articles={articles}
+          isLoading={isLoading}
+          pageUrl={match.url}
+        />
       )}
     </main>
   );

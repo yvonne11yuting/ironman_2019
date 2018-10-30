@@ -9,8 +9,8 @@ const ItemAnchor = ({ news, pageUrl, index, children, className }) => {
     <Link to={`${pageUrl}/${index}`} className={className}>{children}</Link>
   ) : (
     <a href={news.url} target="_blank" className={className}>
-      {children}
-      <FontAwesomeIcon icon={faExternalLinkAlt} color="#999" />
+      <span className="news-item-anchor-text">{children}</span>
+      <FontAwesomeIcon icon={faExternalLinkAlt} color="#999" size="xs" />
     </a>
   );
 };

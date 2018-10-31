@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import NewsDetailContent from "./NewsDetailContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -15,12 +16,12 @@ const BackButton = ({ goBack }) => (
 );
 
 const NewsDetail = ({ newsDetail, history }) => {
-  return (
+  return newsDetail ? (
     <main className="main news-detail">
       <BackButton goBack={history.goBack} />
       <NewsDetailContent newsDetail={newsDetail} />
     </main>
-  );
+  ) : <Redirect to="/news"/>;
 };
 
 const mapStateToProps = ({ news: { articles } }, ownProps) => {

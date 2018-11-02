@@ -7,7 +7,8 @@ import {
   REMOVE_TODO,
   FETCH_NEWS_SUCCESS,
   FETCH_NEWS_ERROR,
-  FETCH_NEWS_REQUEST
+  FETCH_NEWS_REQUEST,
+  CHANGE_LANG
 } from "../constants/action_type";
 
 export const addNewTodo = text => {
@@ -45,3 +46,10 @@ export const fetchNews = country => {
       .catch(err => dispatch({ type: FETCH_NEWS_ERROR, err }));
   }
 };
+
+export const changeLang = lang => {
+  return {
+    type: CHANGE_LANG,
+    lang
+  }
+}

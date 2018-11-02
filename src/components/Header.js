@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import Lang from "./Lang";
 
 const navList = [
   { to: "/", textId: "home" },
@@ -30,14 +31,7 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-      <div className="lang">
-        <span>Language</span>
-        <ul className="lang-options">
-          <li className="icon icon-taiwan"></li>
-          <li className="icon icon-japan"></li>
-          <li className="icon icon-us"></li>
-        </ul>
-      </div>
+      <Lang/>
     </header>
   );
 };

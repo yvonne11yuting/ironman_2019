@@ -1,7 +1,8 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 
 const TodoListItem = ({ todo, completeTodo, removeTodo }) =>
-  todo.map((item) => (
+  todo.map(item => (
     <li key={item.key} className="list-item">
       <input
         type="checkbox"
@@ -12,7 +13,7 @@ const TodoListItem = ({ todo, completeTodo, removeTodo }) =>
       />
       <label htmlFor={item.key}>{item.text}</label>
       <button className="btn" onClick={() => removeTodo(item.key)}>
-        移除
+        <FormattedMessage id="remove"/>
       </button>
     </li>
   ));

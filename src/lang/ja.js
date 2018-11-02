@@ -1,6 +1,6 @@
 const ja = {
   home: "ホームページ",
-  todos: "todoアプリ",
+  todos: "ToDoリスト",
   news: "ニュース",
   heading: "見出し",
   topHeadlines: "ニュース見出し",

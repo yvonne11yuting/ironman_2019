@@ -225,11 +225,11 @@ body {
 
 .lang {
   position: relative;
+  cursor: pointer;
 }
 
 .lang-options {
   position: absolute;
-  display: flex;
   margin-top: 20px;
   background: #fff;
   padding: 10px;

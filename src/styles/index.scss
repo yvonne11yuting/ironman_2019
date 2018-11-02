@@ -69,7 +69,7 @@ body {
 
 .main-no-content {
   font-size: 32px;
-  margin:60px auto;
+  margin: 100px auto;
   color: $defaultColor;
 }
 
@@ -255,4 +255,8 @@ body {
       box-shadow: 1px 1px 1px #0000007d;
     }
   }
+}
+
+.time-block {
+  margin: 20vh 0;
 }

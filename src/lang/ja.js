@@ -11,7 +11,8 @@ const ja = {
   all: "全部",
   active: "未達成",
   completed: "完了",
-  remove: "消除"
+  remove: "消除",
+  activeAmountMsg: '{num} つ未達成'
 };
 
 export default ja;

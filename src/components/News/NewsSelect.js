@@ -1,10 +1,20 @@
 import React from "react";
+import { injectIntl } from "react-intl";
 
-const NewsSelect = ({ country, fetchNews }) => {
+const OPTIONS = [
+  { value: "", textId: "defaultOption", attr: { disabled: "disabled" } },
+  { value: "tw", textId: "tw" },
+  { value: "jp", textId: "jp" },
+  { value: "us", textId: "usa" }
+];
+
+const NewsSelect = ({ country, fetchNews, intl: { formatMessage } }) => {
   return (
     <div className="news-selection">
       <form className="vertical-center">
-        <label htmlFor="newsCountry" className="news-selection-label">Top Headlines</label>
+        <label htmlFor="newsCountry" className="news-selection-label">
+          {formatMessage({ id: "topHeadlines" })}
+        </label>
         <select
           className="news-selection-select"
           name="country"
@@ -12,14 +22,15 @@ const NewsSelect = ({ country, fetchNews }) => {
           onChange={e => fetchNews(e.target.value)}
           value={country}
         >
-          <option value="" disabled>---請選擇---</option>
-          <option value="tw">Taiwan</option>
-          <option value="jp">Japan</option>
-          <option value="us">USA</option>
+          {OPTIONS.map(({ value, textId: id, attr }, index) => (
+            <option key={index} value={value} {...attr}>
+              {formatMessage({ id })}
+            </option>
+          ))}
         </select>
       </form>
     </div>
   );
 };
 
-export default NewsSelect;
+export default injectIntl(NewsSelect);

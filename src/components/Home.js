@@ -1,9 +1,10 @@
 import React from 'react';
+import { FormattedMessage } from "react-intl";
 
 const Home = () => {
   return (
     <main className="main main-no-content">
-      Home
+      <FormattedMessage id="home" description="home"/>
     </main>
   );
 };
